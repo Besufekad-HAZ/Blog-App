@@ -1,4 +1,3 @@
 class PagesController < ApplicationController
-  def blog
-  end
+  def blog; end
 end

@@ -13,7 +13,7 @@ RSpec.describe Post, type: :model do
 
     it 'Invalid if more than 250 characters' do
       post = Post.create(
-        title: 'sdghjashgdjahsgjdahsgjdahgsjdsgjashdgjshgjashgdjashgdjashgddfdjhkjdhkjdhfkjdhksjdhfyujashgdjashgdjashgdjashgvcbvncmnvcmvcvbnmeurioeuroeirueoirueoriueordjashdgasjhdgjashdgjashdga', text: 'This is my first post', author_id: user.id
+        title: 'sdghjashgdjahsgjdahsgjdahgsjdsgjashdgjshgjashgdjashgdjashgddfdjhkjdhkjdhfkjdhksjdhfyujashgdjashgdjashgdjashgvcbvncmnvcmvcvbnmeurioeuroeirueoirueoriueordjashdgasjhdgjashdgjashdgagellodfdhjdhkfjoeimamsdhstypidfndfhjskjdsomthing', text: 'This is my first post', author_id: user.id
       )
       expect(post).to_not be_valid
     end

@@ -3,17 +3,26 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   describe 'Validations' do
-    let(:user) { User.create(name: 'Yidne', photo: 'Image will be displayed here', bio: 'Hello Coders', posts_counter: 0) }
-    let(:post) { Post.create(title: 'First Post', text: 'This is my first post', author_id: user.id, comments_counter: 0, likes_counter: 0) }
+    let(:user) do
+      User.create(name: 'Yidne', photo: 'Image will be displayed here', bio: 'Hello Coders', posts_counter: 0)
+    end
+    let(:post) do
+      Post.create(title: 'First Post', text: 'This is my first post', author_id: user.id, comments_counter: 0,
+                  likes_counter: 0)
+    end
 
-     it 'Must have a title' do
+    it 'Must have a title' do
       post.title = nil
       expect(post).to_not be_valid
     end
 
     it 'Invalid if more than 250 characters' do
       post = Post.create(
-        title: 'sdghjashgdjahsgjdahsgjdahgsjdsgjashdgjshgjashgdjashgdjashgddfdjhkjdhkjdhfkjdhksjdhfyujashgdjashgdjashgdjashgvcbvncmnvcmvcvbnmeurioeuroeirueoirueoriueordjashdgasjhdgjashdgjashdgagellodfdhjdhkfjoeimamsdhstypidfndfhjskjdsomthing', text: 'This is my first post', author_id: user.id
+        title: 'sdghjashgdjahsgjdahsgjdahgsjdsgjashdgjshgjash
+        gdjashgdjashgddfdjhkjdhkjdhfkjdhksjdhfyujashgdjashgd
+        jashgdjashgvcbvncmnvcmvcvbnmeurioeuroeirueoirueoriue
+        ordjashdgasjhdgjashdgjashdgagellodfdhjdhkfjoeimamsdhst
+        ypidfndfhjskjdsomthing', text: 'This is my first post', author_id: user.id
       )
       expect(post).to_not be_valid
     end

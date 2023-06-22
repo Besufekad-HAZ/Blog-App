@@ -4,4 +4,26 @@ Number of posts by the user diplayed here
 <%
 =end%>
 
-<h1>Here are the list of posts for a given user</h1>
+<div class="comment-container">
+     <div class='comment-header'>
+         <h1 id="post-title">
+            "<%= @post.title%>" - <%= @post.author.name%>
+         </h1>
+         <div class="comment-like">
+             <span>Comments: <%= @post.comments_counter%>, </span>
+             <span class="likes">Likes:<%= @post.likes_counter%></span>
+         </div>
+     </div>
+     <p>
+         <%= @post.text%>
+     </p>
+
+             <div class="comments-container-post">
+                 <% @comments=Post.find(@post.id).comments %>
+                     <% @comments.each do |comment| %>
+                         <div  id="single-comment">
+                             <span> <%= comment.author.name %> : <%= comment.text %></span>
+                         </div>
+                     <% end %>
+     </div>
+ </div>

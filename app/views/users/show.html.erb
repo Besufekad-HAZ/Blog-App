@@ -4,4 +4,31 @@ Display user with a given ID
 <%
 =end%>
 
-<h1>Here is a user for a given ID:</h1>
+<div class="user-detail">
+     <div class="detail-description">
+     <%= image_tag @user.photo %>
+     <div class="user-desc">
+         <h1> <%= @user.name %></h1>
+         <h3>Number of posts: <%= @user.posts_counter %></h3>
+     </div>
+     </div>
+     <div class="bio">
+         <h2>Bio</h2>
+         <p> <%= @user.bio %> </p>
+     </div>
+     <div class="recent-posts">
+         <% @user.recent_three_posts.each do |post| %>
+         <div class="single-post">
+             <a href="<%= @user.id%>/posts/<%= post.id%>">
+             <h2><%= post.title %></h2>
+             <p><%= post.text %></p>
+              <div class="comment-like">
+                     <span class="comments">Comments: <%= post.comments_counter%>, </span>
+                     <span class="likes">Likes:<%= post.likes_counter%></span>
+                 </div>
+             </a>
+         </div>
+         <%end%>
+          <a href="<%=@user.id%>/posts/" class="button">See all posts</a>
+     </div>
+ </div>

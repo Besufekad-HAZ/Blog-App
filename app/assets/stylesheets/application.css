@@ -1,10 +1,13 @@
 /* styles.scss */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   font-family: 'Lato', sans-serif;
   margin: 0;
   padding: 0;
@@ -28,7 +31,7 @@ a {
 
 .heading {
   width: 100%;
-  background-color: #ffffff;
+  background-color: #fff;
   color: #173a09;
   text-align: center;
 }

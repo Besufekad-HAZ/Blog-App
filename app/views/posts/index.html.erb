@@ -4,4 +4,40 @@ Posts will be displayed here
 <%
 =end%>
 
-<h1>Here are the list of posts</h1>
+ <div class="post-detail">
+
+ <div class="detail-container">
+         <img src=<%=@user.photo %>>
+         <div class="user-detail">
+             <h1><%= @user.name %></h1>
+             <h3>Number of posts: <%= @user.posts_counter %>
+             </h3>
+         </div>
+ </div>
+
+
+     <div class="recent-posts">
+         <% @posts.each do |post| %>
+         <div class="one-comment">
+             <a href="./<%=post.id%>">
+                 <h2><%= post.title %>
+                 </h2>
+                 <p id="post-text">
+                     <%= post.text.split[0..80].join(" ") %>
+                 </p>
+                 <div class="comment-like">
+                     <span>Comments: <%= post.comments_counter%>, </span>
+                     <span class="likes">Likes:<%= post.likes_counter%></span>
+                 </div>
+                 <div class="comments-container">
+                     <% post.recent_five_comments.each do |comment| %>
+                         <div  id="single-comment">
+                             <span> <%= comment.author.name %> : <%= comment.text %></span>
+                         </div>
+                     <% end %>
+             </div>
+             </a>
+             </div>
+         <% end %>
+     </div>
+     </div>

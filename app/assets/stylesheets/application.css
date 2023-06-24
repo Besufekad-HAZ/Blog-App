@@ -1,15 +1,113 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* Stylesheet is below... */
+
+* {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #021e09;
+  color: white;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.heading {
+  width: 100%;
+  background-color: #fff;
+  color: #173a09;
+  text-align: center;
+}
+
+.users-list,
+.detail-description,
+.detail-container {
+  width: auto;
+  display: flex;
+  gap: 10px;
+}
+
+img {
+  width: 200px;
+  height: auto;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+.description :hover {
+  color: rgb(185, 183, 183);
+  transition: 0.2s ease-in-out;
+}
+
+.user-detail,
+.post-detail {
+  padding: 20px;
+}
+
+.single-post {
+  border: 1px solid white;
+  margin: 10px 0 10px 0;
+  padding: 10px;
+  width: 50%;
+}
+
+.single-post:hover h2 {
+  color: #d4d4ff;
+  transition: 0.1s ease-in;
+}
+
+.bio p {
+  font-style: italic;
+}
+
+.button {
+  background-color: white;
+  color: #323253;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #a0a0e9;
+  transition: 0.16s ease;
+}
+
+.detail-container {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+hr {
+  width: 50%;
+}
+
+.one-comment {
+  border: 1px solid white;
+  margin: 10px 0 10px 0;
+  padding: 10px;
+  width: 50%;
+}
+
+.one-comment:hover h2 {
+  color: #d4d4ff;
+  font-size: 26px;
+  transition: 0.1s ease-in;
+}
+
+.comment-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

@@ -4,4 +4,17 @@ The number of Users will be displayed here
 <%
 =end%>
 
-<h1>Here is a list of all users</h1>
+<div class="container">
+ <h1 class="heading">Blogs</h1>
+ <% @users.each do |user|%>
+ <a href="/users/<%= user.id%>">
+   <div class="users-list">
+     <img src=<%= user.photo %>>
+     <div class="description">
+       <h2> <%= user.name %></h2>
+       <h4>Number of posts: <%= user.posts_counter %></h4>
+     </div>
+   </div>
+   </a>
+ <%end%>
+ </div>

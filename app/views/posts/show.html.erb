@@ -17,7 +17,13 @@ Number of posts by the user diplayed here
      <p>
          <%= @post.text%>
      </p>
-
+             <div class="comment-like-button">
+         <%= form_with model: @like, url: user_post_likes_path(1, @post), scope: :like do |form|%>
+      <%= form.submit 'Like', class: 'single-button' %>
+   <% end %>
+   <button type="button" class="single-button">
+   <%= link_to "Comment", new_user_post_comment_path( post_id: @post.id), { class: "user-link" } %></button>
+     </div>
              <div class="comments-container-post">
                  <% @comments=Post.find(@post.id).comments %>
                      <% @comments.each do |comment| %>

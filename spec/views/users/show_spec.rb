@@ -6,8 +6,8 @@ RSpec.describe 'User show page', type: :feature do
   let!(:post2) { Post.create(title: 'Post2', text: 'Ruby best pratices', author: user) }
   let!(:post3) { Post.create(title: 'Post3', text: 'Java best pratices', author: user) }
   let!(:post4) { Post.create(title: 'Post4', text: 'Learning Phyton', author: user) }
-  let!(:comment) { Comment.create(author: user, post: post, text: 'Hello, this is my first comment.') }
-  let!(:likes) { Like.create(author: user, post: post) }
+  let!(:comment) { Comment.create(author: user, post:, text: 'Hello, this is my first comment.') }
+  let!(:likes) { Like.create(author: user, post:) }
 
   before do
     visit user_path(user.id)

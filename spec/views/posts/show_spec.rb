@@ -5,8 +5,8 @@ require 'rails_helper'
 RSpec.describe 'Post index page', type: :feature do
   let!(:user) { User.create(name: 'Kelvin', bio: 'Full stack developer', photo: 'https://avatars.githubusercontent.com/u/104892694?v=4') }
   let!(:post) { Post.create(title: 'Post1', text: 'Content for post 1', author: user) }
-  let!(:comment) { Comment.create(author: user, post: post, text: 'Hello, this is my first comment.') }
-  let!(:likes) { Like.create(author: user, post: post) }
+  let!(:comment) { Comment.create(author: user, post:, text: 'Hello, this is my first comment.') }
+  let!(:likes) { Like.create(author: user, post:) }
 
   before do
     visit user_posts_path(user, post)

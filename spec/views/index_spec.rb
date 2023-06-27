@@ -9,7 +9,7 @@ RSpec.describe 'Post index page', type: :feature do
                            bio: 'I am a Full-Stack Developer with a strong passion for coding. Currently enrolled and learning at Microverse. I am open to new job opportunities.')
 
   first_post = Post.create(author_id: first_user.id, title: 'Hello', text: 'ONE This is my first post')
-  second_post = Post.create(author_id: first_user.id, title: 'Holaaa ', text: 'TWO This is my second post')
+  second_post = Post.create(author_id: first_user.id, title: 'Holaaa', text: 'TWO This is my second post')
 
   first_comment = Comment.create(author_id: first_user.id, post_id: first_post.id,
                                  text: 'Hello, this is my first comment.')

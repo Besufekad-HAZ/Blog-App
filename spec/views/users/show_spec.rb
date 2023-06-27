@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'User show page', type: :feature do
   let!(:user) { User.create(name: 'Zed', bio: 'Learning', photo: 'https://avatars.githubusercontent.com/u/46059756?v=4') }
-  let!(:post) { Post.create(title: 'Post1', text: 'Content for post 1', author: user) }
-  let!(:post2) { Post.create(title: 'Post2', text: 'Content for post 2', author: user) }
-  let!(:post3) { Post.create(title: 'Post3', text: 'Content for post 3', author: user) }
-  let!(:post4) { Post.create(title: 'Post4', text: 'Content for post 4', author: user) }
+  let!(:post) { Post.create(title: 'Post1', text: 'Js best pratices', author: user) }
+  let!(:post2) { Post.create(title: 'Post2', text: 'Ruby best pratices', author: user) }
+  let!(:post3) { Post.create(title: 'Post3', text: 'Java best pratices', author: user) }
+  let!(:post4) { Post.create(title: 'Post4', text: 'Learning Phyton', author: user) }
   let!(:comment) { Comment.create(author: user, post: post, text: 'Hello, this is my first comment.') }
   let!(:likes) { Like.create(author: user, post: post) }
 

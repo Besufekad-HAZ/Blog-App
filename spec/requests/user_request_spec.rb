@@ -1,37 +1,40 @@
 require 'rails_helper'
 
-# we group together our users tests
-RSpec.describe '/users', type: :request do
-  context 'GET /index' do
-    it 'renders a successful response' do
-      get users_url
-      expect(response).to be_successful
+RSpec.describe 'Users', type: :request do
+  describe 'user index' do
+    before :each do
+      get users_path
     end
-
-    it 'renders the correct template' do
-      get users_url
-      expect(response).to render_template('index')
+    it 'should check if status was correct' do
+      expect(response).to have_http_status(200)
     end
-
-    it 'includes correct placeholder text' do
-      get users_url
-      expect(response.body).to include('<h1>Here is a list of all users</h1>')
+    it 'should check if correct index template is rendered' do
+      expect(response).to render_template(:index)
     end
   end
-  context 'GET /show' do
-    it 'renders a successful response' do
-      get users_url(5)
-      expect(response).to be_successful
+
+  context 'user show' do
+    before :each do
+      @user = User.create(name: 'Kelvin Kaviku',
+                          photo: 'https://avatars.githubusercontent.com/u/104892694?v=4',
+                          bio: 'In love with Ruby on Rails.',
+                          posts_counter: 1)
+      get user_path(@user.id)
     end
 
-    it 'renders the correct template' do
-      get user_url(5)
-      expect(response).to render_template('show')
+    # Check if response status is correct.
+    it 'should check if status was correct' do
+      expect(response).to have_http_status(200)
     end
 
-    it 'includes correct placeholder text' do
-      get user_url(5)
-      expect(response.body).to include('<h1>Here is a user for a given ID:</h1>')
+    # Check if a correct template is rendered.
+    it 'should check if correct index template is rendered' do
+      expect(response).to render_template(:show)
+    end
+
+    # Check if the response body includes correct placeholder text.
+    it 'should check if response body includes correct placeholder text' do
+      expect(response.body).to include('Bio')
     end
   end
 end

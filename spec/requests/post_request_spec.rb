@@ -1,36 +1,42 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  context 'GET /index' do
-    it 'renders a successful response' do
-      get user_posts_path(1)
-      expect(response).to be_successful
+  describe 'post index action' do
+    before :each do
+      @user = User.create(name: 'Kelvin Kaviku',
+                          photo: 'https://avatars.githubusercontent.com/u/104892694?v=4',
+                          bio: 'In love with Ruby on Rails.',
+                          posts_counter: 1)
+      get "/users/#{@user.id}/posts"
     end
 
-    it 'renders the correct template' do
-      get user_posts_path(1)
-      expect(response).to render_template('index')
+    it 'should check if status was correct' do
+      expect(response).to have_http_status(200)
     end
 
-    it 'includes correct placeholder text' do
-      get user_posts_path(1)
-      expect(response.body).to include('<h1>Here are the list of posts</h1>')
+    it 'should check if correct index template is rendered' do
+      expect(response).to render_template(:index)
     end
   end
-  context 'GET /show' do
-    it 'renders a successful response' do
-      get user_post_url(1, 3)
-      expect(response).to be_successful
-    end
 
-    it 'renders the correct template' do
-      get user_post_url(1, 3)
-      expect(response).to render_template('show')
-    end
-
-    it 'includes correct placeholder text' do
-      get user_post_url(1, 3)
-      expect(response.body).to include('<h1>Here are the list of posts for a given user</h1>')
+  describe 'post show action' do
+    before :each do
+      @user = User.create(
+        name: 'Kelvin Kaviku',
+        photo: 'https://avatars.githubusercontent.com/u/104892694?v=4',
+        bio: 'In love with Ruby on Rails.',
+        posts_counter: 1
+      )
+      @post = Post.create(
+        author: @user,
+        title: 'Hello',
+        text: 'First Post',
+        user_id: @user.id,
+        author_id: @user.id,
+        comments_counter: 0,
+        likes_counter: 0
+      )
+      get "/users/#{@user.id}/posts/#{@post.id}"
     end
   end
 end

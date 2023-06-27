@@ -1,6 +1,7 @@
 <a name="readme-top"></a>
 <h1 align='center'> Rails Blog</h1>
 
+![Ruby on rails](image.png)
 
 # 📗 Table of Contents
 

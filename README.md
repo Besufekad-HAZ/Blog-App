@@ -113,6 +113,17 @@ To deploy the app you can use
 - Twitter: [@BesufekadAlemu7](https://twitter.com/BesufekadAlemu7)
 - LinkedIn: [@besura](www.linkedin.com/in/besura)
 
+## <a> 👤 Besufekad Alemu </a>
+
+- GitHub: [@Besufekad-HAZ](https://github.com/Besufekad-HAZ)
+- Twitter: [@BesufekadAlemu7](https://twitter.com/BesufekadAlemu7)
+- LinkedIn: [@besura](www.linkedin.com/in/besura)
+
+👤 **Kelvin kaviku**
+
+- GitHub: [@brainskev](https://github.com/brainskev/)
+- Twitter: [@kelvin_ngotho](https://twitter.com/kevin_ngotho?s=09/)
+- LinkedIn: [kelvin](https://www.linkedin.com/in/kelvinkaviku/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

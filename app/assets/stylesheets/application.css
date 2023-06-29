@@ -1,5 +1,14 @@
 /* styles.scss */
 
+:root {
+--primary-color: #218a58;
+--secondary-color: rgb(8, 103, 35);
+--gray-color: rgb(192, 186, 186);
+--dark-gray-color: gray;
+--font-family: 'lato', sans-serif;
+--font-size: 1.1rem;
+}
+
 *,
 *::before,
 *::after {
@@ -139,7 +148,7 @@ hr {
 }
 
 .single-button:hover {
-  background-color: #3b3b7a;
+  background-color: #04042b;
   transition: 0.2s ease;
 }
 
@@ -161,56 +170,101 @@ hr {
   border-radius: 5px;
 }
 
+/* Second section */
+
 .devise-container {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: rgb(255, 255, 255);
-  border: 2px dotted whitesmoke;
+  color: white;
+  padding: 2%;
+  background-color: var(--primary-color);
+  max-width: 40%;
+  margin: 10% auto 0;
+  border-radius: 8px;
+  box-shadow: 2px 2px 11px rgba(0, 0, 0, 0.3);
 }
 
-.devise-container label {
-  color: white;
-  align-items: center;
+.links {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 }
 
-.input-field {
+.links a {
   color: white;
-  padding: 1rem;
-  width: 100%;
-  margin-top: 5%;
-  border-radius: 0.8em;
+  margin-top: -19px;
 }
 
-.devise-container a {
-  color: white;
+.devise-container input::placeholder {
+  color: var(--gray-color);
+}
+
+.devise-container a:hover {
+  color: var(--secondary-color);
+}
+
+.devise-container input {
+  width: 250px;
+  display: flex;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 1.1rem;
+}
+
+#user_remember_me {
+  width: auto;
+  margin-right: 10px;
 }
 
 .remember-field {
- margin-top: 5%;
-}
-
-.remember-me-label {
-  margin-left: 100px;
-}
-
-.actions {
   display: flex;
-  width: 100%;
   justify-content: center;
+  align-items: center;
+}
+
+.remember-me-field {
+  flex: 1;
 }
 
 .actions input {
-  margin: 6% auto;
-  padding: 1rem;
+  border-radius: 5px;
+  background: rgb(10, 67, 27);
+  border: 0;
+  color: white;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-#user_email {
-  margin: 6% auto;
-  font-family: 'lato', sans-serif;
-  font-size: 1em;
-  padding: 1rem;
+.actions input:hover {
+  background: rgb(23, 125, 159);
+  transition: 0.2s ease-in-out;
+}
+
+.login-container input:not([type="checkbox"]):not([type="submit"]) {
+  outline: 0;
+  width: 20rem;
+  height: 2rem;
+  border-radius: 5px;
+  border: 0.5px solid var(--dark-gray-color);
+  padding: 1% 2%;
+  font-size: var(--font-size);
+}
+
+.new_user {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  font-size: 1.1rem;
 }
 

@@ -12,16 +12,22 @@ RSpec.describe 'Post index page', type: :feature do
     I am open to new job opportunities.'
   )
 
-  first_post = Post.create(author_id: first_user.id,
-                           title: 'Hello',
-                           text: 'ONE This is my first post')
-  second_post = Post.create(author_id: first_user.id,
-                            title: 'Holaaa',
-                            text: 'TWO This is my second post')
+  first_post = Post.create(
+    author_id: first_user.id,
+    title: 'Hello',
+    text: 'ONE This is my first post'
+  )
+  second_post = Post.create(
+    author_id: first_user.id,
+    title: 'Holaaa',
+    text: 'TWO This is my second post'
+  )
 
-  first_comment = Comment.create(author_id: first_user.id,
-                                 post_id: first_post.id,
-                                 text: 'Hello, this is my first comment.')
+  first_comment = Comment.create(
+    author_id: first_user.id,
+    post_id: first_post.id,
+    text: 'Hello, this is my first comment.'
+  )
 
   before do
     visit user_posts_path(first_user.id)

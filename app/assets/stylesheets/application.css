@@ -1,12 +1,12 @@
 /* styles.scss */
 
 :root {
---primary-color: #218a58;
---secondary-color: rgb(8, 103, 35);
---gray-color: rgb(192, 186, 186);
---dark-gray-color: gray;
---font-family: 'lato', sans-serif;
---font-size: 1.1rem;
+  --primary-color: #218a58;
+  --secondary-color: rgb(8, 103, 35);
+  --gray-color: rgb(192, 186, 186);
+  --dark-gray-color: gray;
+  --font-family: 'lato', sans-serif;
+  --font-size: 1.1rem;
 }
 
 *,
@@ -267,4 +267,3 @@ hr {
   gap: 1.4rem;
   font-size: 1.1rem;
 }
-
